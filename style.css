@@ -23,15 +23,18 @@
 }
 
 body {
-    background: url(./assets/sky.png) no-repeat top center/cover;
+    background: var(--bg-url) no-repeat top center/cover;
     background-color: rgba(249, 90, 255, 0.5);
     background-blend-mode: lighten;
+    min-height: 100svh;
 }
 
 
 .dark body{
+    background: var(--bg-url) no-repeat top center/cover;
     background-color: rgba(12, 0, 29, 0.9);
     background-blend-mode: darken;
+    min-height: 100svh;
 }
 
 body * {
@@ -206,5 +209,22 @@ footer {
     text-align: center;
     font-size: 14px;
 
+}
+
+@media (min-width:700px) {
+    :root {
+        --bg-url: url(./assets/expanded.png);
+    }
+    
+    .dark {
+        --bg-url: url(./assets/expanded.png);
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
